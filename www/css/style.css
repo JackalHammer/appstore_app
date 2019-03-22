@@ -1,0 +1,31 @@
+/*
+font-family: 'Staatliches', cursive;
+font-family: 'Comfortaa', cursive;
+*/
+
+
+/*
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Staatliches');
+
+* {
+    box-sizing: border-box;
+    margin: auto;
+
+}
+*/
+html,
+body {
+    margin: 0;
+}
+
+body {
+    background-color: black;
+}
+
+p {
+    color: white
+}
+
+.info {
+    position: absolute;
+}
