@@ -15,45 +15,57 @@ function handleOrientation(event) {
     y = event.beta;
     x = event.gamma;
 
-    posx = map(x, -180, 180, 0, window.innerWidth, true)
-    posy = map(y, -90, 90, 0, window.innerHeight, true)
-
-    posx += x;
-    posy += y;
-
-    col1 = map(x, -180, 180, 0, 255, true)
-    col2 = map(y, -90, 90, 0, 255, true)
-    col3 = map(z, 0, 360, 0, 255, true)
-
-
     $("#alpha").html(z)
     $("#beta").html(y)
     $("#gamma").html(x)
+
+    $("#match").html(percent)
+    $("#result").html(words)
+    $("#instructions").html(tell)
 }
 
-var posx = window.innerWidth;
-var posy = window.innerHeight;
-var col1, col2, col3;
 var x, y, z;
+var words = '';
+var percent = '0%';
+var tell = '';
 
-function setup() {
-    var cnv = createCanvas(window.innerWidth, window.innerHeight);
-    cnv.parent("myCanvas")
-
-    posx = width / 2;
-    posy = height / 2;
-}
+function setup() {}
 
 function draw() {
-    noStroke();
-    fill(col1, col2, col3);
-    ellipse(posx, posy, 100, 100);
 
-    strokeWeight(10);
-    stroke(col1, col2, col3)
-    fill(255);
-    textSize(100);
-    textAlign(CENTER, CENTER);
-    text('PAINT!', window.innerWidth / 2, (window.innerHeight / 2) - 200)
+    if (y >= -20 && y <= 20) {
+        if (z >= 0 && z < 30) {
+            words = "They are alright... you can do better.";
+            percent = '50%';
+        } else if (z >= 30 && z < 60) {
+            words = 'HAHAHAHAHA... No.';
+            percent = '40%';
+        } else if (z >= 60 && z < 90) {
+            words = 'Would make a good secondary friend.';
+            percent = '60%';
+        } else if (z >= 90 && z < 120) {
+            words = 'Might wanna just get started on the restraining order now.';
+            percent = '10%';
+        } else if (z >= 150 && z < 180) {
+            words = "This person could be your new BFF. You would no longer need your old ugly friends that don't laugh at your jokes.";
+            percent = '80%';
+        } else if (z >= 210 && z < 240) {
+            words = 'This dude seems pretty sus, would stay away from this one.';
+            percent = '30%';
+        } else if (z >= 270 && z < 300) {
+            words = 'Run...'
+            percent = '0%';
+        } else if (z >= 300 && z < 330) {
+            words = "Don't even say hi when you see them in the halls, they are clingy and will get the wrong idea.";
+            percent = '20%';
+        } else if (z >= 330 && z <= 360) {
+            words = 'Take their hand, and never let them go.';
+            percent = '100%';
+        }
+    } else {
+        words = 'Point your phone at someone and see how compatible of a friend they would be.';
+        percent = '---';
+
+    }
 
 }
