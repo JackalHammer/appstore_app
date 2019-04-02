@@ -1,12 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Framwork7-Template</name>
+<widget id="com.joel.friendshipcalculator" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Friendship Calculator</name>
     <description>
-        A blank PhoneGap app.
+        Calculates Friendship
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="support@joel.com" href="http://joelhockin.com">
+        Joel Hockin
     </author>
+    <platform name="android" />
     <content src="index.html" />
     <access origin="*" />
+    <plugin name="cordova-plugin-device-motion" />
+    <icon src="www/res/icon/icon.png" />
 </widget>
